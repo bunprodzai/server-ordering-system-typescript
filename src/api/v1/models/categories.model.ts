@@ -9,7 +9,6 @@ const categorySchema = new mongoose.Schema({
     type: String,
     default: "active"
   },
-  category_id: String,
   deleted: {
     type: Boolean,
     default: false
