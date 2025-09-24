@@ -36,7 +36,7 @@ export const createQr = async (req: Request, res: Response) => {
     vnp_TxnRef: code, // mã đơn hàng
     vnp_OrderInfo: orderInfo, // thông tin đơn hàng, mô tả đơn hàng
     vnp_OrderType: ProductCode.Other,
-    vnp_ReturnUrl: `https://server-ordering-system-typescript.app/api/v1/vn-pay/check-payment-vnpay`, //
+    vnp_ReturnUrl: `https://server-ordering-system-typescript-1vtl7jq24.vercel.app/api/v1/vn-pay/check-payment-vnpay`, //
     vnp_Locale: VnpLocale.VN, // 'vn' or 'en'
     vnp_CreateDate: dateFormat(new Date()),
     vnp_ExpireDate: dateFormat(tomorrow), // 1 ngày sau hết hạn
@@ -68,9 +68,9 @@ export const checkPayment = async (req: Request, res: Response) => {
       });
 
     // Redirect về trang frontend
-    return res.redirect(`client-ordering-system/success-payment/${code}`);
+    return res.redirect(`https://client-ordering-system/success-payment/${code}`);
   } else {
-    return res.redirect(`client-ordering-system/order/checkout/pay/fail/${code}`);
+    return res.redirect(`https://client-ordering-system/order/checkout/pay/fail/${code}`);
   }
 
   //   {
